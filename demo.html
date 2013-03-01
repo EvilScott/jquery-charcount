@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>jQuery CharCount Demo</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="jquery-charcount.js"></script>
+        <script type="text/javascript"> $(function() { $('#limited').charCount({ limit: 100, counter: '#my-counter' }); }); </script>
+    </head>
+    <body>
+        <h3>jQuery CharCount Demo</h3>
+        <textarea id="limited" style="border:1px solid #ccc;width:600px;height:150px;word-wrap:break-word"></textarea>
+        <br />
+        <span id="my-counter"></span>
+    </body>
+</html>
