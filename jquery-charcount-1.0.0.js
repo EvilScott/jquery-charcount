@@ -8,7 +8,13 @@
 
         init: function($ele, options) {
             $ele.charLimit = options.limit;
-            $ele.$counter = $(options.counter);
+            if ($(options.counter).size()) {
+                $ele.$counter = $(options.counter);
+            } else {
+                var id = 'charcount-' + Math.ceil(Math.random() * 1000);
+                $ele.after('<p id="' + id + '"></p>');
+                $ele.$counter = $('p#' + id);
+            }
             CharCount.update($ele);
             $ele.keyup(function() { CharCount.update($ele); });
         },
@@ -24,7 +30,7 @@
     };
 
     $.fn.charCount = function(options) {
-        CharCount.init(this, $.extend(true, CharCount.default, options));
+        CharCount.init(this, $.extend(true, {}, CharCount.default, options));
     }
 
 })(jQuery);
