@@ -7,7 +7,6 @@
         },
 
         init: function($ele, options) {
-            console.log(options);
             $ele.charLimit = options.limit;
             $ele.$counter = $(options.counter);
             CharCount.update($ele);
@@ -15,7 +14,6 @@
         },
 
         update: function($ele) {
-            console.log($ele);
             var curCount = $ele.val().length;
             if (curCount >= $ele.charLimit) {
                 $ele.val($ele.val().substring(0, $ele.charLimit));
